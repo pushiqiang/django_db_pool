@@ -38,7 +38,7 @@ DATABASES = {
     }
 }
 ```
-##### 其中连接池佩（POOL）配置参见 DBUtils的 PooledDB参数：
+##### 其中连接池（POOL）配置参见 DBUtils的 PooledDB参数：
 ```
 mincached: initial number of idle connections in the pool
     (0 means no connections are made at startup)
