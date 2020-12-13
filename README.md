@@ -38,3 +38,35 @@ DATABASES = {
     }
 }
 ```
+##### 其中连接池佩（POOL）配置参见 DBUtils的 PooledDB参数：
+```
+mincached: initial number of idle connections in the pool
+    (0 means no connections are made at startup)
+maxcached: maximum number of idle connections in the pool
+    (0 or None means unlimited pool size)
+maxshared: maximum number of shared connections
+    (0 or None means all connections are dedicated)
+    When this maximum number is reached, connections are
+    shared if they have been requested as shareable.
+maxconnections: maximum number of connections generally allowed
+    (0 or None means an arbitrary number of connections)
+blocking: determines behavior when exceeding the maximum
+    (if this is set to true, block and wait until the number of
+    connections decreases, otherwise an error will be reported)
+maxusage: maximum number of reuses of a single connection
+    (0 or None means unlimited reuse)
+    When this maximum usage number of the connection is reached,
+    the connection is automatically reset (closed and reopened).
+setsession: optional list of SQL commands that may serve to prepare
+    the session, e.g. ["set datestyle to ...", "set time zone ..."]
+reset: how connections should be reset when returned to the pool
+    (False or None to rollback transcations started with begin(),
+    True to always issue a rollback for safety's sake)
+failures: an optional exception class or a tuple of exception classes
+    for which the connection failover mechanism shall be applied,
+    if the default (OperationalError, InternalError) is not adequate
+ping: determines when the connection should be checked with ping()
+    (0 = None = never, 1 = default = whenever fetched from the pool,
+    2 = when a cursor is created, 4 = when a query is executed,
+    7 = always, and all other bit combinations of these values)
+```
