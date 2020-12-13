@@ -1,0 +1,23 @@
+version: '2.2'
+
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: example
+      MYSQL_ROOT_PASSWORD: devpwd123
+
+    ports:
+      - "3306:3306"
+
+  django_db_pool:
+    build: .
+
+    volumes:
+      - ./example:/opt/src
+
+    ports:
+      - "0.0.0.0:8888:8888"
+
+    command: sleep 10000000000
