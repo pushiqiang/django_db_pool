@@ -1,5 +1,12 @@
 # django使用DBUtils实现连接池
 
+**Blog**
+- [Django数据库连接池（mysql）](https://pushiqiang.blog.csdn.net/article/details/51152755)
+
+- [关于在python项目中使用连接池的问题](https://pushiqiang.blog.csdn.net/article/details/125768647)
+
+
+
 #### 由于django没有连接池的功能，当并发量大时可能造成数据库连接超限。
 
 #### DBUtils 是一套用于管理数据库连接池的Python包，为高频度高并发的数据库访问提供更好的性能，可以自动管理连接对象的创建和释放。并允许对非线程安全的数据库接口进行线程安全包装。
